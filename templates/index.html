@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+<h3>MA Bloga Hoşgeldiniz</h3>
+<p>Bu blogta geliştiriciler olarak yazılımlarınızı paylaşabilir ve insanlarla yardımcı olabilirsiniz.</p>
+<p>Makaleler ekleyip,diğer kullanıcılarımızın eklediği makaleri inceleyebilir,dilerseniz yorum yapabilirsiniz.</p>
+
+</div>
+<p>
+    {% if request.user.is_authenticated %}
+    <div class="alert alert-success">
+    Giriş Yapılmış,{{request.user.username}}
+    </div>
+        
+    
+    {% else %}
+         <div class="alert alert-danger">
+         Giriş Yapılmamış
+         </div>
+    {% endif %}
+
+
+</p>
+
+{% endblock body %}
